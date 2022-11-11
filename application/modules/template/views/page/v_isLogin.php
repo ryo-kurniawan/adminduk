@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>material-dashboard-2-pro/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="<?= base_url() ?>material-dashboard-2-pro/assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="<?= base_url() ?>material-dashboard-2-pro/assets/img/favicon.webp">
     <title> <?= $judul ?> | Adminduk Dukcapil Gorut </title>
     <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard-pro" />
     <meta name="keywords" content="creative tim, html dashboard, html css dashboard, web dashboard, bootstrap 5 dashboard, bootstrap 5, css3 dashboard, bootstrap 5 admin, material dashboard bootstrap 5 dashboard, frontend, responsive bootstrap 5 dashboard, material design, material dashboard bootstrap 5 dashboard">
@@ -26,22 +26,6 @@
 
     <!-- Load Style -->
     <?php $this->load->view($style) ?>
-
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NKDMSK6');
-    </script>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -68,7 +52,7 @@
                         }
                         ?>
                         <img src="<?= base_url($linkUserAvatar) ?>" class="avatar">
-                        <span class="nav-link-text ms-2 ps-1"><?= $dataLogin['username'] ? $dataLogin['username'] : '' ?></span>
+                        <span class="nav-link-text ms-2 ps-1"><?= $dataLogin['nama'] ? $dataLogin['nama'] : '' ?></span>
                     </a>
                     <div class="collapse" id="ProfileNav">
                         <ul class="nav ">

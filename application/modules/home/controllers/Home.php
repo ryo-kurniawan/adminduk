@@ -23,5 +23,8 @@ class Home extends MX_Controller
 		$r['dataLogin'] = Modules::run('template/getUserLogin');
 
 		echo Modules::run('template/templateIsLogin', $r);
+
+		// echo $r['dataLogin']['nik'] . '<br>';
+		// echo $this->session->userdata('nik');
 	}
 }

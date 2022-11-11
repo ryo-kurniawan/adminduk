@@ -22,19 +22,21 @@ class Template extends MX_Controller
 
     public function getUserLogin()
     {
-        $getUser = $this->mt->getWhere('t_user', ['nik' => $this->session->userdata('nik')]);
-        if ($getUser->num_rows() > 0) {
-            $row = $getUser->row_array();
-            $dataLogin = [
-                'nik' => $row['nik'],
-                'nama' => $row['nama'],
-                'email' => $row['email'],
-                'username' => $row['username'],
-                'avatar' => $row['avatar'],
-                'created_at' => $row['created_at'],
-                'last_login' => $row['last_login']
-            ];
-            return $dataLogin;
+        if ($this->session->userdata('nik')) {
+            $getUser = $this->mt->getWhere('t_user', ['nik' => $this->session->userdata('nik')]);
+            if ($getUser->num_rows() > 0) {
+                $row = $getUser->row_array();
+                $dataLogin = [
+                    'nik' => $row['nik'],
+                    'nama' => $row['name'],
+                    'email' => $row['email'],
+                    'username' => $row['username'],
+                    'avatar' => $row['avatar'],
+                    'created_at' => $row['created_at'],
+                    'last_login' => $row['last_login']
+                ];
+                return $dataLogin;
+            }
         }
     }
 

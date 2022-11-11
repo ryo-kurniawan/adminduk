@@ -12,15 +12,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="material-icons opacity-10">create</i>
             </div>
-            <span class="nav-link-text ms-1">Permohonan RS</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-white <?= ($isActiveMenu == 'permohonan_kua') ? 'bg-gradient-primary active' : '' ?>" href="<?= base_url('kua/permohonankua'); ?>">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="material-icons opacity-10">create</i>
-            </div>
-            <span class="nav-link-text ms-1">Permohonan KUA</span>
+            <span class="nav-link-text ms-1">Permohonan</span>
         </a>
     </li>
 

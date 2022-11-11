@@ -28,15 +28,93 @@
                             <input type="hidden" value="Data-01" id="validFor">
                         </fieldset>
 
-                        <!-- Data Ayah -->
-                        <fieldset id="data_ayah" class="my-3">
-                            <h6 class="mb-2">1. Data Ayah</h6>
+                        <!-- Data  -->
+                        <fieldset class="my-3">
+                            <h6 class="mb-2">1. Data Pelapor</h6>
 
                             <!-- Input nama ayah -->
-                            <label class="my-0">Perhatikan penulisan nama lengkap Ayah. Nama harus sesuai dengan data
+                            <label class="my-0">Perhatikan penulisan nama, nama harus sesuai dengan data
                                 kependudukan Dukcapil</label>
                             <div id="elem_nama_ayah" class="input-group input-group-sm input-group-outline mb-0">
-                                <label class="form-label">Nama Ayah *</label>
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-control" id="nama_pelapor" />
+                            </div>
+                            <div id="mess_nama_pelapor" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+
+                            <!-- Input nik ayah -->
+                            <label class="my-0">Perhatikan penulisan NIK . NIK harus sesuai dengan data
+                                kependudukan
+                                Dukcapil</label>
+                            <div id="elem_nik_ayah" class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">NIK *</label>
+                                <input type="text" class="form-control" id="nik_" />
+                            </div>
+                            <div id="mess_nik_ayah" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+                        </fieldset>
+
+                        <!-- Data Saki I -->
+                        <fieldset class="my-3">
+                            <h6 class="mb-2">2. Data Saksi I</h6>
+
+                            <!-- Input nama ayah -->
+                            <label class="my-0">Perhatikan penulisan nama, nama harus sesuai dengan data
+                                kependudukan Dukcapil</label>
+                            <div id="elem_nama_ayah" class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-control" id="nama_saksi_1" />
+                            </div>
+                            <div id="mess_nama_ayah" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+
+                            <!-- Input nik ayah -->
+                            <label class="my-0">Perhatikan penulisan NIK . NIK harus sesuai dengan data
+                                kependudukan
+                                Dukcapil</label>
+                            <div id="elem_nik_ayah" class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">NIK *</label>
+                                <input type="text" class="form-control" id="nik_saksi_1" />
+                            </div>
+                            <div id="mess_nik_ayah" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+                        </fieldset>
+
+                        <!-- Data Saki II -->
+                        <fieldset class="my-3">
+                            <h6 class="mb-2">3. Data Saksi II</h6>
+
+                            <!-- Input nama ayah -->
+                            <label class="my-0">Perhatikan penulisan nama, nama harus sesuai dengan data
+                                kependudukan Dukcapil</label>
+                            <div id="elem_nama_ayah" class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-control" id="nama_saksi_2" />
+                            </div>
+                            <div id="mess_nama_ayah" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+
+                            <!-- Input nik ayah -->
+                            <label class="my-0">Perhatikan penulisan NIK . NIK harus sesuai dengan data
+                                kependudukan
+                                Dukcapil</label>
+                            <div id="elem_nik_ayah" class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">NIK *</label>
+                                <input type="text" class="form-control" id="nik_saksi_2" />
+                            </div>
+                            <div id="mess_nik_ayah" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+                        </fieldset>
+
+                        <!-- Data Ayah -->
+                        <fieldset class="my-3">
+                            <h6 class="mb-2">4. Data Ayah</h6>
+
+                            <!-- Input nama ayah -->
+                            <label class="my-0">Perhatikan penulisan nama, nama harus sesuai dengan data
+                                kependudukan Dukcapil</label>
+                            <div id="elem_nama_ayah" class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">Nama Lengkap *</label>
                                 <input type="text" class="form-control" id="nama_ayah" />
                             </div>
                             <div id="mess_nama_ayah" class="mb-3"></div>
@@ -46,18 +124,11 @@
                             <label class="my-0">Perhatikan penulisan nik ayah. NIK harus sesuai dengan data kependudukan
                                 Dukcapil</label>
                             <div id="elem_nik_ayah" class="input-group input-group-sm input-group-outline mb-0">
-                                <label class="form-label">NIK Ayah *</label>
+                                <label class="form-label">NIK *</label>
                                 <input type="text" class="form-control" id="nik_ayah" />
                             </div>
                             <div id="mess_nik_ayah" class="mb-3"></div>
                             <!-- ---------------------------------------------------------- -->
-
-                            <!-- <div class="d-flex justify-content-end mt-4">
-                                <button id="btn-cencel" type="button" class="btn btn-danger mx-2">Batal</button>
-                                <button id="btn-text-0" type="button" class="btn btn-primary"
-                                    onclick="proses(id = this.id, data1 = 'data_ayah', data2 = 'data_ibu', data3 = 'data_anak', data4 = 'data_berkas')">Lanjut
-                                    Proses</button>
-                            </div> -->
 
                         </fieldset>
 
@@ -65,78 +136,91 @@
 
                         <!-- Data Ibu -->
                         <fieldset id="data_ibu" class="my-4">
-                            <h6 class="mb-2">2. Data Ibu</h6>
+                            <h6 class="mb-2">5. Data Ibu</h6>
 
                             <!-- Input nama ibu -->
-                            <label class="my-0">Perhatikan penulisan nama lengkap Ibu. Nama harus sesuai dengan data
+                            <label class="my-0">Perhatikan penulisan nama, nama harus sesuai dengan data
                                 kependudukan Dukcapil</label>
                             <div id="elem_nama_ibu" class="input-group input-group-sm input-group-outline mb-0">
-                                <label class="form-label">Nama Ibu *</label>
+                                <label class="form-label">Nama Lengkap *</label>
                                 <input type="text" class="form-control" id="nama_ibu" />
                             </div>
                             <div id="mess_nama_ibu" class="mb-3"></div>
                             <!-- ---------------------------------------------------------- -->
 
                             <!-- Input nik ibu -->
-                            <label class="my-0">Perhatikan penulisan nik pelapor. <b class="text-danger">NIK harus
+                            <label class="my-0">Perhatikan penulisan nik . <b class="text-danger">NIK harus
                                     sesuai</b> dengan data kependudukan Dukcapil</label>
                             <div id="elem_nik_ibu" class="input-group input-group-sm input-group-outline mb-0">
-                                <label class="form-label">NIK Ibu *</label>
+                                <label class="form-label">NIK *</label>
                                 <input type="text" class="form-control" id="nik_ibu" />
                             </div>
                             <div id="mess_nik_ibu" class="mb-3"></div>
                             <!-- ---------------------------------------------------------- -->
 
-                            <!-- <div class="d-flex justify-content-end mt-4">
-                                <button id="btn-cencel-1" type="button" class="btn btn-danger mx-2"
-                                    onclick="mundur(id = this.id, data1 = 'data_ayah', data2 = 'data_ibu', data3 = 'data_anak', data4 = 'data_berkas')">Mundur</button>
-                                <button id="btn-text-1" type="button" class="btn btn-primary"
-                                    onclick="proses(id = this.id, data1 = 'data_ayah', data2 = 'data_ibu', data3 = 'data_anak', data4 = 'data_berkas')">Lanjut
-                                    Proses</button>
-                            </div> -->
-
                         </fieldset>
 
                         <!-- Data Anak -->
                         <fieldset id="data_anak" class="my-4">
-                            <h6 class="mb-2">3. Data Anak</h6>
+                            <h6 class="mb-2">6. Data Anak</h6>
 
                             <!-- Input nama anak -->
-                            <label class="my-0">Perhatikan penulisan nama lengkap Anak.</label>
-                            <div id="elem_nama_anak" class="input-group input-group-sm input-group-outline mb-0">
-                                <label class="form-label">Nama Anak *</label>
+                            <label class="my-0">Perhatikan penulisan nama anak. Nama harus berdasarkan Pemendagri No. 73
+                                Tahun 2022</label>
+                            <div class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">Nama Lengkap *</label>
                                 <input type="text" class="form-control" id="nama_anak" />
                             </div>
                             <div id="mess_nama_anak" class="mb-3"></div>
                             <!-- ---------------------------------------------------------- -->
 
-                            <!-- Input tempat lahir -->
-                            <label class="my-0"><b class="text-danger">Tempat Lahir harus sesuai</b> dengan tempat
-                                dimana anak dilahirkan</label>
+                            <!-- Input Jenis kelamin -->
+                            <label class="my-0">Perhatikan dalam pemilihan jenis kelamin</label>
                             <div id="elem_tempat_lahir_anak"
                                 class="input-group input-group-sm input-group-outline mb-0">
-                                <label class="form-label">Tempat Lahir *</label>
-                                <input type="text" class="form-control" id="tempat_lahir_anak" />
+                                <label class="form-label">Jenis Kelamin *</label>
+                                <input type="text" class="form-control" id="jenis_kelamin_anak" />
                             </div>
-                            <div id="mess_tempat_lahir_anak" class="mb-3"></div>
+                            <div id="mess_jenis_kelamin_anak" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+
+                            <!-- Input tempat dilahirirkan -->
+                            <label class="my-0">Tempat dimana anak dilahirkan!</label>
+                            <div id="elem_tempat_lahir_anak"
+                                class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">Tempat Dilahirkan *</label>
+                                <input type="text" class="form-control" id="tempat_dilahirkan" />
+                            </div>
+                            <div id="mess_tempat_dilahirkan" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
+
+                            <!-- Input tempat lahir -->
+                            <label class="my-0">Tempat Lahir harus sesuai dengan tempat
+                                dimana anak dilahirkan</label>
+                            <div class="input-group input-group-sm input-group-outline mb-0">
+                                <label class="form-label">Tempat Kelahiran *</label>
+                                <input type="text" class="form-control" id="tempat_kelahiran" />
+                            </div>
+                            <div id="mess_tempat_kelahiran" class="mb-3"></div>
                             <!-- ---------------------------------------------------------- -->
 
                             <!-- Input tanggal lahir -->
-                            <label class="my-0"><b class="text-danger">Tanggal Lahir harus sesuai</b> Tanggal kelahiran
+                            <label class="my-0">Tanggal Lahir harus sesuai dengan tanggal kelahiran
                                 anak</label>
-                            <div id="elem_tgl_lahir_anak" class="input-group input-group-static mt-3 mb-0">
+                            <div id="elem_tgl_lahir_anak" class="input-group input-group-sm input-group-outline mb-0">
                                 <input type="date" class="form-control" id="tgl_lahir_anak">
                             </div>
                             <div id="mess_tgl_lahir_anak" class="mb-3"></div>
                             <!-- ---------------------------------------------------------- -->
 
-                            <!-- <div class="d-flex justify-content-end mt-4">
-                                <button id="btn-cencel-2" type="button" class="btn btn-danger mx-2"
-                                    onclick="mundur(id = this.id, data1 = 'data_ayah', data2 = 'data_ibu', data3 = 'data_anak', data4 = 'data_berkas')">Mundur</button>
-                                <button id="btn-text-2" type="button" class="btn btn-primary"
-                                    onclick="proses(id = this.id, data1 = 'data_ayah', data2 = 'data_ibu', data3 = 'data_anak', data4 = 'data_berkas')">Lanjut
-                                    Proses</button>
-                            </div> -->
+                            <!-- Input tempat lahir -->
+                            <label class="my-0">Diisi dengan waktu kelahiran anak</label>
+                            <div class="input-group input-group-static my-3">
+                                <label>Time</label>
+                                <input type="time" class="form-control">
+                            </div>
+                            <div id="mess_waktu_kelahiran" class="mb-3"></div>
+                            <!-- ---------------------------------------------------------- -->
 
                         </fieldset>
 
@@ -220,7 +304,4 @@
 
                 </div>
             </div>
-        </div>
-    </div>
-
-</div>
+            </
