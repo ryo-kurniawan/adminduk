@@ -50,5 +50,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
+$route['kua/create'] = 'kua/kua/create_page';
+$route['kua/create/submit'] = 'kua/kua/create';
+$route['kua/edit/(:any)'] = 'kua/kua/edit_page';
+$route['kua/do_edit'] = 'kua/kua/edit';
+$route['kua/detail/(:any)'] = 'kua/kua/detail_page';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
