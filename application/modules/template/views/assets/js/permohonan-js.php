@@ -30,7 +30,6 @@
             icon: 'success',
             title: "<?= $this->session->flashdata('success') ?>",
             showConfirmButton: false,
-            timer: 2000
         })
     </script>
 <?php endif; ?>
@@ -41,7 +40,6 @@
             icon: 'error',
             title: "<?= $this->session->flashdata('danger') ?>",
             showConfirmButton: false,
-            timer: 2000
         })
     </script>
 <?php endif; ?>
