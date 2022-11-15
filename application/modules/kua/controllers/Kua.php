@@ -11,6 +11,7 @@ class Kua extends MX_Controller
 		$this->load->model('M_kua');
 		$this->load->library('form_validation');
         $this->load->model('template/Model_template', 'mt');
+		$this->load->helper('tgl_indo');
 	}
 
 	public function getUserLogin()

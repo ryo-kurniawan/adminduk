@@ -129,9 +129,21 @@
                         </div>
                     </fieldset>
 
+                    <fieldset id="saksi_kedua" class="my-3 p-3">
+                        <h6 class="mb-2">6. Tanggal Pernikahan</h6>
+                        <div class="row">
+                            <div class="col-2">
+                                <span class="ms-3">Tanggal</span>
+                            </div>
+                            <div class="col-10">
+                                <div class="border rounded p-2 mb-3"><?= $data->tgl_nikah ? date_indo($data->tgl_nikah) : "<span class='text-danger'>Tanggal Pernikahan Tidak Ditemukan</span>" ?></div>
+                            </div>
+                        </div>
+                    </fieldset>
+
                     <!-- Upload Berkas -->
                     <fieldset id="data_berkas" class="my-4 p-3">
-                        <h6 class="mb-2">6. Berkas</h6>
+                        <h6 class="mb-2">7. Berkas</h6>
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6">

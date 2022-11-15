@@ -23,6 +23,9 @@
                                     <th>Penghulu</th>
                                     <th>Saksi</th>
                                     <th>Status</th>
+                                    <th>
+                                        Tanggal <br> Pernikahan
+                                    </th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -76,6 +79,7 @@
                                             rounded py-1 px-2 fs-7 text-uppercase"><?= $key['status'] ?>
                                         </span>
                                     </td>
+                                    <td><?= $key['tgl_nikah'] ? date_indo($key['tgl_nikah']) : '-' ?></td>
                                     <td class="td-actions text-right">
                                         <?php if ($dataLogin['role'] == 'operator_kua') : ?>
                                         <a href="<?= base_url().'kua/detail/'.$key['id'] ?>" type="button" class="btn btn-info p-2"
@@ -85,18 +89,20 @@
                                             <i class="material-icons">info_outline</i>
                                         </a>
                                             <?php if ($key['status'] != 'tervalidasi') : ?>
-                                            <a href="<?= base_url().'kua/edit/'.$key['id'] ?>" type="button" class="btn btn-success p-2"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                data-bs-custom-class="custom-tooltip"
-                                                data-bs-title="Edit">
-                                                <i class="material-icons">edit</i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger p-2" onclick="return sweetConfirm(event, 'Anda akan menghapus file ini', '<?= base_url().'kua/delete/'.$key['id'] ?>')"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                data-bs-custom-class="custom-tooltip"
-                                                data-bs-title="Hapus">
-                                                <i class="material-icons">delete_forever</i>
-                                            </button>
+                                                <?php if ($key['status'] != 'selesai') : ?>
+                                                <a href="<?= base_url().'kua/edit/'.$key['id'] ?>" type="button" class="btn btn-success p-2"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    data-bs-custom-class="custom-tooltip"
+                                                    data-bs-title="Edit">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                                <button type="button" class="btn btn-danger p-2" onclick="return sweetConfirm(event, 'Anda akan menghapus file ini', '<?= base_url().'kua/delete/'.$key['id'] ?>')"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    data-bs-custom-class="custom-tooltip"
+                                                    data-bs-title="Hapus">
+                                                    <i class="material-icons">delete_forever</i>
+                                                </button>
+                                                <?php endif; ?>
                                             <?php else : ?>
                                             <button type="button" class="btn btn-success p-2" onclick="return sweetConfirm(event, 'Realisasi Data?', '<?= base_url().'kua/realisasi/'.$key['id'] ?>')"
                                                 data-bs-toggle="tooltip" data-bs-placement="top"

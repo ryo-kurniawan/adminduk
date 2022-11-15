@@ -112,9 +112,17 @@
                             </div>
                         </fieldset>
 
+                        <fieldset id="tgl_nikah" class="my-3 p-3">
+                            <h6 class="mb-2">6. Tanggal Pernikahan *</h6>
+                            <label class="my-0">Isi sesuai dengan tanggal pernikahan yang direncanakan</label>
+                            <div id="elem_tgl_nikah" class="input-group input-group-sm input-group-outline mb-0">
+                                <input type="date" class="form-control" id="tgl_nikah" name="tgl_nikah" />
+                            </div>
+                        </fieldset>
+
                         <!-- Upload Berkas -->
                         <fieldset id="data_berkas" class="my-4 p-3">
-                            <h6 class="mb-2">6. Unggah Berkas</h6>
+                            <h6 class="mb-2">7. Unggah Berkas</h6>
 
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
