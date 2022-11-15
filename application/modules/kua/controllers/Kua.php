@@ -178,4 +178,20 @@ class Kua extends MX_Controller
 			redirect('kua/validasi/'.$id);
 		}
 	}
+
+	public function realisasi()
+	{
+		if($this->getUserLogin()['role'] != 'operator_kua') {
+			$this->session->set_flashdata('danger', 'Gagal!');
+			redirect('kua');	
+		}
+		$id = $this->uri->segment(3);
+		if($this->M_kua->realisasi($id)) {
+			$this->session->set_flashdata('success', 'Realisasi data berhasil!');
+			redirect('kua/detail/'.$id);
+		} else {
+			$this->session->set_flashdata('danger', 'Realisasi data gagal!');
+			redirect('kua/realisasi/'.$id);
+		}
+	}
 }
