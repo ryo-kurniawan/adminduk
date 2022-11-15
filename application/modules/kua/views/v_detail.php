@@ -18,6 +18,17 @@
                     </div>
                 </div>
                 <div class="card-body px-3 pb-2">
+                    <?php if($revisi != null) : ?>
+                    <fieldset class="my-3 p-3">
+                        <h6 class="mb-2">Pesan Revisi</h6>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="border rounded p-2 mb-3"><?= $revisi->message ?></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <?php endif; ?>
+
                     <fieldset id="mempelai_pria" class="my-3 p-3">
                         <h6 class="mb-2">1. Mempelai Pria</h6>
                         <div class="row">
