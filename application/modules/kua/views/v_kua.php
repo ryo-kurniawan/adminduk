@@ -7,7 +7,9 @@
                         <h6 class="text-white text-capitalize pb-1">
                             <?= $subJudul ?>
                         </h6>
+                        <?php if ($dataLogin['role'] == 'operator_kua') : ?>
                         <a href="<?= base_url('kua/create') ?>" class="btn btn-light">Tambah Data</a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="card-body px-0 pb-2">
@@ -19,8 +21,7 @@
                                     <th>Mempelai Pria</th>
                                     <th>Mempelai Wanita</th>
                                     <th>Penghulu</th>
-                                    <th>Saksi 1</th>
-                                    <th>Saksi 2</th>
+                                    <th>Saksi</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -44,24 +45,64 @@
                                     <td>
                                         <div class="text-dark"><?= $key['nama_saksi_1'] ?></div>
                                         <small><?= $key['nik_saksi_1'] ?></small>
-                                    </td>
-                                    <td>
                                         <div class="text-dark"><?= $key['nama_saksi_2'] ?></div>
                                         <small><?= $key['nik_saksi_2'] ?></small>
                                     </td>
                                     <td>
-                                        <span class="border border-warning rounded py-1 px-2 fs-7 text-warning text-uppercase"><?= $key['status'] ?></span>
+                                        <span class="border
+                                            <?php
+                                                switch ($key['status']) {
+                                                    case 'proses':
+                                                        echo 'border-warning text-warning';
+                                                        break;
+
+                                                    case 'revisi':
+                                                        echo 'border-warning text-warning';
+                                                        break;
+
+                                                    case 'tervalidasi':
+                                                        echo 'border-info text-info';
+                                                        break;
+
+                                                    case 'selesai':
+                                                        echo 'border-success text-success';
+                                                        break;
+                                                    
+                                                    default:
+                                                        echo 'border-dark text-dark';
+                                                        break;
+                                                }
+                                            ?> 
+                                            rounded py-1 px-2 fs-7 text-uppercase"><?= $key['status'] ?>
+                                        </span>
                                     </td>
                                     <td class="td-actions text-right">
+                                        <?php if ($dataLogin['role'] == 'operator_kua') : ?>
                                         <a href="<?= base_url().'kua/detail/'.$key['id'] ?>" type="button" rel="tooltip" class="btn btn-info p-2">
                                             <i class="material-icons">info_outline</i>
                                         </a>
-                                        <a href="<?= base_url().'kua/edit/'.$key['id'] ?>" type="button" rel="tooltip" class="btn btn-success p-2">
-                                            <i class="material-icons">edit</i>
-                                        </a>
-                                        <button type="button" rel="tooltip" class="btn btn-danger p-2" onclick="return sweetConfirm(event, 'Anda akan menghapus file ini', '<?= base_url().'kua/delete/'.$key['id'] ?>')">
-                                            <i class="material-icons">delete_forever</i>
-                                        </button>
+                                            <?php if ($key['status'] != 'tervalidasi') : ?>
+                                            <a href="<?= base_url().'kua/edit/'.$key['id'] ?>" type="button" rel="tooltip" class="btn btn-success p-2">
+                                                <i class="material-icons">edit</i>
+                                            </a>
+                                            <button type="button" rel="tooltip" class="btn btn-danger p-2" onclick="return sweetConfirm(event, 'Anda akan menghapus file ini', '<?= base_url().'kua/delete/'.$key['id'] ?>')">
+                                                <i class="material-icons">delete_forever</i>
+                                            </button>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                        <?php if ($dataLogin['role'] == 'operator_capil') : ?>
+                                            <?php if ($key['status'] == 'proses') : ?>
+                                            <a href="<?= base_url().'kua/validasi/'.$key['id'] ?>" type="button" rel="tooltip" class="btn btn-success p-2">
+                                                <i class="material-icons">check</i>
+                                                Validasi
+                                            </a>
+                                            <?php else : ?>
+                                            <a href="<?= base_url().'kua/detail/'.$key['id'] ?>" type="button" rel="tooltip" class="btn btn-info p-2">
+                                                <i class="material-icons">info_outline</i>
+                                                Detail
+                                            </a>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

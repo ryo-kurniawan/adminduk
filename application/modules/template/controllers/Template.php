@@ -32,6 +32,7 @@ class Template extends MX_Controller
                     'email' => $row['email'],
                     'username' => $row['username'],
                     'avatar' => $row['avatar'],
+                    'role' => $row['role'],
                     'created_at' => $row['created_at'],
                     'last_login' => $row['last_login']
                 ];

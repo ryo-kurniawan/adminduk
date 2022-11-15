@@ -312,5 +312,41 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="<?= base_url('material-dashboard-2-pro/assets/js/plugins/sweetalert.min.js') ?>"></script>
 
 <script src="<?= base_url() ?>material-dashboard-2-pro/assets/js/material-dashboard.min.js?v=3.0.6"></script>
+<?php if($this->session->flashdata('success')): ?>
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: "<?= $this->session->flashdata('success') ?>",
+            showConfirmButton: false,
+        })
+    </script>
+<?php endif; ?>
+<?php if($this->session->flashdata('danger')): ?>
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: "<?= $this->session->flashdata('danger') ?>",
+            showConfirmButton: false,
+        })
+    </script>
+<?php endif; ?>
+<script>
+    const sweetConfirm = (e, msg, rdr) => {
+        e.preventDefault()
+        Swal.fire({
+            title: msg,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Yes',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = rdr
+            }
+        })
+    }
+</script>

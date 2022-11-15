@@ -3,13 +3,18 @@
         <div class="col-12">
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                    <div class="bg-gradient-primary shadow-primary border-radius-lg p-3 pb-0 d-flex align-items-center">
-                        <a href="<?= base_url('kua') ?>" class="btn btn-light p-2 me-4">
-                            <i class="material-icons opacity-10 m-0 p-0">chevron_left</i>
-                        </a>
-                        <h6 class="text-white text-capitalize pb-1">
-                            <?= $subJudul ?>
-                        </h6>
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg p-3 pb-0 d-flex align-items-center justify-content-between">
+                        <span class="d-flex align-items-center">
+                            <a href="<?= base_url('kua') ?>" class="btn btn-light p-2 me-4">
+                                <i class="material-icons opacity-10 m-0 p-0">chevron_left</i>
+                            </a>
+                            <h6 class="text-white text-capitalize pb-1">
+                                <?= $subJudul ?>
+                            </h6>
+                        </span>
+                        <span class="text-light pb-3 pe-2">
+                            Status : <small class="text-uppercase fw-bold"><?= $data->status ?></small>
+                        </span>
                     </div>
                 </div>
                 <div class="card-body px-2 pb-2">
@@ -315,8 +320,9 @@
                             </div>
                             <div class="d-flex justify-content-end mt-4">
                                 <input type="hidden" name="id" value="<?= $data->id ?>">
-                                <button id="btn-cencel-3" type="button" class="btn btn-danger mx-2">Batal</button>
-                                <button id="btn-text-3" type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                <button id="btn-cencel-3" type="button" class="btn btn-danger">Batal</button>
+                                <button id="btn-text-3" type="submit" name="save" class="btn btn-warning mx-2">Simpan</button>
+                                <button id="btn-text-3" type="submit" name="create" class="btn btn-primary">Kirim Permohonan</button>
                             </div>
 
                         </fieldset>

@@ -3,13 +3,18 @@
         <div class="col-12">
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                    <div class="bg-gradient-primary shadow-primary border-radius-lg p-3 pb-0 d-flex align-items-center">
-                        <a href="<?= base_url('kua') ?>" class="btn btn-light p-2 me-4">
-                            <i class="material-icons opacity-10 m-0 p-0">chevron_left</i>
-                        </a>
-                        <h6 class="text-white text-capitalize pb-1">
-                            <?= $subJudul ?>
-                        </h6>
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg p-3 pb-0 d-flex align-items-center justify-content-between">
+                        <span class="d-flex align-items-center">
+                            <a href="<?= base_url('kua') ?>" class="btn btn-light p-2 me-4">
+                                <i class="material-icons opacity-10 m-0 p-0">chevron_left</i>
+                            </a>
+                            <h6 class="text-white text-capitalize pb-1">
+                                <?= $subJudul ?>
+                            </h6>
+                        </span>
+                        <span class="text-light pb-3 pe-2">
+                            Status : <small class="text-uppercase fw-bold"><?= $data->status ?></small>
+                        </span>
                     </div>
                 </div>
                 <div class="card-body px-3 pb-2">
@@ -317,6 +322,30 @@
                                 </div>
                             </div>
                         </div>
+                        <?php if (isset($validasi)) : ?>
+                        <div class="d-flex justify-content-end mt-4">
+                            <button id="btn-text-3" type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#revisiModal">Revisi</button>
+                            <button id="btn-text-3" type="button" class="btn btn-primary"  onclick="return sweetConfirm(event, 'Validasi data?', '<?= base_url('kua/do_validation/'.$data->id) ?>')">Validasi</button>
+                        </div>
+                        <div class="modal fade" id="revisiModal" tabindex="-1" aria-labelledby="revisiModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="<?= base_url('kua/do_revisi/'.$data->id) ?>" method="post">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="revisiModalLabel">Pesan Revisi</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <textarea class="form-control border p-3" name="pesan_revisi" placeholder="Tulis Pesan Disini" style="min-height: 10rem"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </fieldset>
                 </div>
             </div>

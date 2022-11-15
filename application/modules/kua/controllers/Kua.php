@@ -9,8 +9,31 @@ class Kua extends MX_Controller
 			redirect(base_url("auth"));
 		}
 		$this->load->model('M_kua');
-
+		$this->load->library('form_validation');
+        $this->load->model('template/Model_template', 'mt');
 	}
+
+	public function getUserLogin()
+    {
+        if ($this->session->userdata('nik')) {
+            $getUser = $this->mt->getWhere('t_user', ['nik' => $this->session->userdata('nik')]);
+            if ($getUser->num_rows() > 0) {
+                $row = $getUser->row_array();
+                $dataLogin = [
+                    'nik' => $row['nik'],
+                    'nama' => $row['name'],
+                    'email' => $row['email'],
+                    'username' => $row['username'],
+                    'avatar' => $row['avatar'],
+                    'role' => $row['role'],
+                    'created_at' => $row['created_at'],
+                    'last_login' => $row['last_login']
+                ];
+                return $dataLogin;
+            }
+        }
+    }
+
 	public function index()
 	{
 		$r['menu'] = 'template/menu/v_menuIslogin';
@@ -103,5 +126,56 @@ class Kua extends MX_Controller
 		$r['data'] = $result;
 		$r['dataLogin'] = Modules::run('template/getUserLogin');
 		echo Modules::run('template/templateIsLogin', $r);
+	}
+
+	public function validasi_page()
+	{
+		$r['menu'] = 'template/menu/v_menuIslogin';
+		$r['isActiveMenu'] = 'kua';
+		$r['breadcrumb'] = 'KUA';
+		$r['judul'] = 'Validasi Permohonan';
+		$r['subJudul'] = 'Validasi Formulir Permohonan KUA';
+		$r['content'] = 'kua/v_detail';
+		$r['style'] = 'template/assets/css/permohonan-css';
+		$r['script'] = 'template/assets/js/permohonan-js';
+		$id = $this->uri->segment(3);
+		$result = $this->db->where('id', $id)->get('t_formulir_kua')->result()[0];
+		$r['data'] = $result;
+		$r['validasi'] = true;
+		$r['dataLogin'] = Modules::run('template/getUserLogin');
+		echo Modules::run('template/templateIsLogin', $r);
+	}
+
+	public function validation()
+	{
+		if($this->getUserLogin()['role'] != 'operator_capil') {
+			$this->session->set_flashdata('danger', 'Gagal!');
+			redirect('kua');	
+		}
+		$id = $this->uri->segment(3);
+		if($this->M_kua->validation($id)) {
+			$this->session->set_flashdata('success', 'Validasi data berhasil!');
+			redirect('kua/detail/'.$id);
+		} else {
+			$this->session->set_flashdata('danger', 'Validasi data gagal!');
+			redirect('kua/validasi/'.$id);
+		}
+	}
+
+	public function revisi()
+	{
+		if($this->getUserLogin()['role'] != 'operator_capil') {
+			$this->session->set_flashdata('danger', 'Gagal!');
+			redirect('kua');	
+		}
+		$id = $this->uri->segment(3);
+		$data = $this->input->post();
+		if($this->M_kua->revisi($id, $data)) {
+			$this->session->set_flashdata('success', 'Revisi data berhasil!');
+			redirect('kua/detail/'.$id);
+		} else {
+			$this->session->set_flashdata('danger', 'Revisi data gagal!');
+			redirect('kua/validasi/'.$id);
+		}
 	}
 }

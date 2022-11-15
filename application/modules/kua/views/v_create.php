@@ -251,8 +251,9 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-4">
-                                <button id="btn-cencel-3" type="button" class="btn btn-danger mx-2">Batal</button>
-                                <button id="btn-text-3" type="simpan" class="btn btn-primary">Kirim Permohonan</button>
+                                <button id="btn-cencel-3" type="button" class="btn btn-danger">Batal</button>
+                                <button id="btn-text-3" type="submit" name="save" class="btn btn-warning mx-2">Simpan</button>
+                                <button id="btn-text-3" type="submit" name="create" class="btn btn-primary">Kirim Permohonan</button>
                             </div>
 
                         </fieldset>
