@@ -114,4 +114,14 @@ class M_kua extends MY_Model
 			return false;
 		}
 	}
+
+	public function realisasi($id) {
+		$this->db->where('id', $id)->update($this->_table, [ 'status' => 'selesai' ]);
+		$affected = $this->db->affected_rows();
+		if ($affected > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
