@@ -19,6 +19,11 @@ class Home extends MX_Controller
 		$r['style'] = 'template/assets/css/dashboard-css';
 		$r['script'] = 'template/assets/js/dashboard-js';
 
+		$r['proses'] = $this->db->where('status', 'proses')->get('t_formulir_kua')->num_rows();
+		$r['belum_lengkap'] = $this->db->where('status', 'belum lengkap')->get('t_formulir_kua')->num_rows();
+		$r['tervalidasi'] = $this->db->where('status', 'tervalidasi')->get('t_formulir_kua')->num_rows();
+		$r['revisi'] = $this->db->where('status', 'revisi')->get('t_formulir_kua')->num_rows();
+		$r['selesai'] = $this->db->where('status', 'selesai')->get('t_formulir_kua')->num_rows();
 
 		$r['dataLogin'] = Modules::run('template/getUserLogin');
 

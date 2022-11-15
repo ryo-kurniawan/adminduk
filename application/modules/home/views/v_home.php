@@ -12,7 +12,7 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-sm mb-0 text-capitalize">Revisi Permohonan</p>
-              <h4 class="mb-0">1</h4>
+              <h4 class="mb-0"><?= $revisi ?></h4>
             </div>
           </div>
 
@@ -30,7 +30,7 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-sm mb-0 text-capitalize">Tervalidasi</p>
-              <h4 class="mb-0">1</h4>
+              <h4 class="mb-0"><?= $tervalidasi ?></h4>
             </div>
           </div>
           <div class="card-footer p-3">
@@ -46,8 +46,8 @@
               <i class="material-icons opacity-10">schedule</i>
             </div>
             <div class="text-end pt-1">
-              <p class="text-sm mb-0 text-capitalize ">Data Belum Lengkap</p>
-              <h4 class="mb-0 ">1</h4>
+              <p class="text-sm mb-0 text-capitalize ">Proses</p>
+              <h4 class="mb-0 "><?= $belum_lengkap+$proses ?></h4>
             </div>
           </div>
           <div class="card-footer p-3">
@@ -63,7 +63,7 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-sm mb-0 text-capitalize ">Permohonan Terealisasi</p>
-              <h4 class="mb-0 ">1</h4>
+              <h4 class="mb-0 "><?= $selesai ?></h4>
             </div>
           </div>
           <div class="card-footer p-3">
