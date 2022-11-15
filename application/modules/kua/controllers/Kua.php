@@ -122,8 +122,8 @@ class Kua extends MX_Controller
 		$r['style'] = 'template/assets/css/permohonan-css';
 		$r['script'] = 'template/assets/js/permohonan-js';
 		$id = $this->uri->segment(3);
-		$result = $this->db->where('id', $id)->get('t_formulir_kua')->result()[0];
-		$r['data'] = $result;
+		$r['data'] = $this->db->where('id', $id)->get('t_formulir_kua')->result()[0];
+		$r['revisi'] = $this->db->where('form_kua_id', $id)->get('t_revisi_formulir_kua')->last_row();
 		$r['dataLogin'] = Modules::run('template/getUserLogin');
 		echo Modules::run('template/templateIsLogin', $r);
 	}
