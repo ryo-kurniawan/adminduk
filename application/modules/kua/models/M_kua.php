@@ -124,4 +124,14 @@ class M_kua extends MY_Model
 			return false;
 		}
 	}
+
+	public function deleteKua($id) {
+		$this->db->where('id', $id)->delete($this->_table);
+		$affected = $this->db->affected_rows();
+		if ($affected > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

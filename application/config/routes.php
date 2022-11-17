@@ -59,5 +59,6 @@ $route['kua/validasi/(:any)'] = 'kua/kua/validasi_page';
 $route['kua/do_validation/(:any)'] = 'kua/kua/validation';
 $route['kua/do_revisi/(:any)'] = 'kua/kua/revisi';
 $route['kua/realisasi/(:any)'] = 'kua/kua/realisasi';
+$route['kua/delete/(:any)'] = 'kua/kua/delete';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
